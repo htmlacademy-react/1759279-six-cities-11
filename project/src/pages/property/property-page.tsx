@@ -1,4 +1,4 @@
-import PropertyComponent from '../../components/card-component';
+import PropertyComponent from '../../components/cards-components/card-component';
 
 // type PropertyPageProps = {
 //   offersCount: number;

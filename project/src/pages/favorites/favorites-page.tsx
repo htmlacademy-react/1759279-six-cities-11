@@ -1,4 +1,4 @@
-import FavoritesComponent from '../../components/favorites-component';
+import FavoritesComponent from '../../components/cards-components/favorites-component';
 
 // type FavoritesPageProps = {
 //   offersCount: number;
