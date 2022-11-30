@@ -1,13 +1,22 @@
-
-// type MainEmptyPageProps = {
-//   offersCount: number;
-// }
-
-import SignOutHeaderComponent from "../../components/header-components/sign-out-header-component";
-
-const MainEmptyPage = (): JSX.Element => (
+const NotFoundPage = (): JSX.Element => (
   <div className="page page--gray page--main">
-    <SignOutHeaderComponent/>
+    <header className="header">
+      <div className="container">
+        <div className="header__wrapper">
+          <div className="header__left">
+            <a className="header__logo-link header__logo-link--active">
+              <img
+                className="header__logo"
+                src="img/logo.svg"
+                alt="6 cities logo"
+                width="81"
+                height="41"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
 
     <main className="page__main page__main--index page__main--index-empty">
       <h1 className="visually-hidden">Cities</h1>
@@ -40,10 +49,7 @@ const MainEmptyPage = (): JSX.Element => (
               </a>
             </li>
             <li className="locations__item">
-              <a
-                className="locations__item-link tabs__item tabs__item--active"
-                href="#"
-              >
+              <a className="locations__item-link tabs__item" href="#">
                 <span>Dusseldorf</span>
               </a>
             </li>
@@ -54,11 +60,9 @@ const MainEmptyPage = (): JSX.Element => (
         <div className="cities__places-container cities__places-container--empty container">
           <section className="cities__no-places">
             <div className="cities__status-wrapper tabs__content">
-              <b className="cities__status">No places to stay available</b>
-              <p className="cities__status-description">
-                We could not find any property available at the moment in
-                Dusseldorf
-              </p>
+              <b className="cities__status">
+                404 Not Found. <br /> Sorry:(
+              </b>
             </div>
           </section>
           <div className="cities__right-section"></div>
@@ -68,4 +72,4 @@ const MainEmptyPage = (): JSX.Element => (
   </div>
 );
 
-export default MainEmptyPage;
+export default NotFoundPage;
