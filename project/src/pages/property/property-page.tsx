@@ -199,7 +199,7 @@ const PropertyPage = ({offer, review}: PropertyPageProps): JSX.Element => {
                     </div>
                   </li>
                 </ul>
-                <FormComponent review={review}/>
+                <FormComponent />
               </section>
             </div>
           </div>
