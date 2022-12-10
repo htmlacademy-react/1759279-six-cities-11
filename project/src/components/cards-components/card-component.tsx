@@ -3,10 +3,11 @@ import { CardOffer } from '../../types/offer';
 
 type CardComponentProps = {
   offer: CardOffer;
+  onMouseOver: (id:number) => void;
 };
 
 const CardComponent = (props: CardComponentProps) => {
-  const { offer } = props;
+  const { offer, onMouseOver } = props;
   const {
     id,
     src,
@@ -15,7 +16,9 @@ const CardComponent = (props: CardComponentProps) => {
     price,
   } = offer;
   return (
-    <article className='cities__card place-card'>
+    <article className='cities__card place-card'
+      onMouseOver={()=> onMouseOver(id)}
+    >
       <div className='place-card__mark'>
         <span>Premium</span>
       </div>

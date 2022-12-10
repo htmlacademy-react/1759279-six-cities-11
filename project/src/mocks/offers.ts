@@ -64,6 +64,22 @@ export const offers: CardOffer[] = [
     proInfo: true,
     lat: 52.3809553943508,
     lng: 4.939309666406198,
+  },
+  {
+    id: 5,
+    src: '../img/apartment-01.jpg',
+    title: 'Apartment',
+    description: 'Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    premium: false, //TODO или boolean?
+    type: 'house',
+    rating: 7,
+    bedrooms: 4,
+    guests: 8,
+    price: 230,
+    facilities: ['Wifi', 'Heating', 'Kitchen', 'Cable TV'],
+    proInfo: true,
+    lat: 52.4109553944251,
+    lng: 4.939309666406198,
   }
 ];
 //Карточка предложения

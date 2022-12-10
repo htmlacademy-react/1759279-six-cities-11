@@ -14,3 +14,5 @@ export type CardOffer ={
   lat: number;
   lng: number;
 };
+
+export type CardOffers = CardOffer[];

@@ -15,15 +15,16 @@ import {CardOffer} from '../../types/offer';
 type AppScreenProps = {
   offers: CardOffer[];
   reviews: CardReview[];
+  selectedOffer: CardOffer;
 }
 
-function App({offers, reviews}: AppScreenProps): JSX.Element {
+function App({offers, reviews, selectedOffer}: AppScreenProps): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path={AppRoute.Main}
-          element={<MainPage offers={offers}/>}
+          element={<MainPage offers={offers} selectedOffer={selectedOffer}/>}
         />
         <Route
           path={AppRoute.Login}
@@ -41,7 +42,7 @@ function App({offers, reviews}: AppScreenProps): JSX.Element {
         />
         <Route
           path={AppRoute.Room}
-          element={<PropertyPage offer={offers[0]} review={reviews[0]}/>}
+          element={<PropertyPage offer={offers[0]} reviews={reviews} offers={offers} selectedOffer={selectedOffer}/>}
         />
         <Route
           path="*"

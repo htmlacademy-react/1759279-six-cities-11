@@ -2,7 +2,7 @@ export type CardReview ={
   id: number;
   avatar: string;
   rating: number;
-  data: string;
+  date: string;
   text: string;
 };
 

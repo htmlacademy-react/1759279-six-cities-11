@@ -16,6 +16,7 @@ root.render(
     <App
       offers = {offers}
       reviews = {reviews}
+      selectedOffer={offers[0]}
     />
   </React.StrictMode>,
 );
