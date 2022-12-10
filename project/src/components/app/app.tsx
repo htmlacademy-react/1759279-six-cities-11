@@ -9,19 +9,22 @@ import PropertyPage from '../../pages/property/property-page';
 // import PropertyNotLoggedPage from '../../pages/property/property-not-logged-page';
 import NotFoundPage from '../../pages/not-found-page/not-found-page';
 import PrivateRoute from '../../components/private-route/private-route';
-
+import {CardReview} from '../../types/review';
+import {CardOffer} from '../../types/offer';
 
 type AppScreenProps = {
-  offersCount: number;
+  offers: CardOffer[];
+  reviews: CardReview[];
+  selectedOffer: CardOffer;
 }
 
-function App({offersCount}: AppScreenProps): JSX.Element {
+function App({offers, reviews, selectedOffer}: AppScreenProps): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path={AppRoute.Main}
-          element={<MainPage offersCount={offersCount}/>}
+          element={<MainPage offers={offers} selectedOffer={selectedOffer}/>}
         />
         <Route
           path={AppRoute.Login}
@@ -39,7 +42,7 @@ function App({offersCount}: AppScreenProps): JSX.Element {
         />
         <Route
           path={AppRoute.Room}
-          element={<PropertyPage/>}
+          element={<PropertyPage offer={offers[0]} reviews={reviews} offers={offers} selectedOffer={selectedOffer}/>}
         />
         <Route
           path="*"
