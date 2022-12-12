@@ -3,14 +3,20 @@ import SignOutHeaderComponent from '../../components/header-components/sign-out-
 import CardList from '../../components/cards-components/card-list';
 import { CardOffer } from '../../types/offer';
 import MapComponent from '../../components/cards-components/map-component';
+import {useState} from 'react';
 
 type MainPageProps = {
   offers: CardOffer[];
   selectedOffer: CardOffer;
 };
 
+
 const MainPage = (props: MainPageProps): JSX.Element => {
-  const { offers, selectedOffer } = props;
+  const { offers } = props;
+
+  const [activeCardId, setActiveCardId] = useState<number>();
+
+
   return (
     <div className='page page--gray page--main'>
       <SignOutHeaderComponent />
@@ -81,11 +87,11 @@ const MainPage = (props: MainPageProps): JSX.Element => {
                   </li>
                 </ul>
               </form>
-              <CardList offers={offers} />
+              <CardList offers={offers} setActiveCard={setActiveCardId}/>
             </section>
             <div className='cities__right-section'>
               <section className='cities__map map'>
-                <MapComponent offers={offers} selectedOffer={selectedOffer}/>
+                <MapComponent offers={offers} selectedOffer={activeCardId}/>
               </section>
             </div>
           </div>

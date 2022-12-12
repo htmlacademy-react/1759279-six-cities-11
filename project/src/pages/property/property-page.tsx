@@ -10,7 +10,7 @@ type PropertyPageProps = {
   offer: CardOffer;
   reviews: CardReview[];
   offers: CardOffer[];
-  selectedOffer: CardOffer;
+  selectedOffer: CardOffer | undefined;
 };
 
 const PropertyPage = ({offer, offers, selectedOffer, reviews}: PropertyPageProps): JSX.Element => {
@@ -174,7 +174,7 @@ const PropertyPage = ({offer, offers, selectedOffer, reviews}: PropertyPageProps
             </div>
           </div>
           <section className='property__map map'>
-            <MapComponent offers={offers.slice(0,3)} selectedOffer={selectedOffer} maxWidth={'1144px'}/>
+            <MapComponent offers={offers.slice(0,3)} selectedOffer={(selectedOffer as CardOffer).id } maxWidth={'1144px'}/>
           </section>
         </section>
         <div className='container'>

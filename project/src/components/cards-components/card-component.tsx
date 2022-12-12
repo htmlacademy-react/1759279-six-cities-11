@@ -15,6 +15,7 @@ const CardComponent = (props: CardComponentProps) => {
     type,
     price,
   } = offer;
+
   return (
     <article className='cities__card place-card'
       onMouseOver={()=> onMouseOver(id)}
