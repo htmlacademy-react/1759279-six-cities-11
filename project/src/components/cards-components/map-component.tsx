@@ -7,13 +7,13 @@ import useMap from '../../hooks/useMap';
 
 type MapProps = {
   offers: CardOffer[];
-  selectedOffer: CardOffer;
+  selectedOffer: number | undefined;
   maxWidth?: string;
 };
 
 const defaultCustomIcon = new Icon({
   iconUrl: URL_MARKER_DEFAULT,
-  iconSize: [30, 40], //TODO
+  iconSize: [30, 40],
   iconAnchor: [20, 40]
 });
 
@@ -24,7 +24,7 @@ const currentCustomIcon = new Icon({
 });
 
 const MapComponent = (props: MapProps): JSX.Element => {
-  const { offers, selectedOffer, maxWidth } = props;
+  const { offers, selectedOffer, maxWidth} = props;
 
   const mapRef = useRef(null);
   const map = useMap(mapRef, offers[0]);
@@ -39,7 +39,7 @@ const MapComponent = (props: MapProps): JSX.Element => {
 
         marker
           .setIcon(
-            selectedOffer !== undefined && offer.id === selectedOffer.id
+            selectedOffer !== undefined && offer.id === selectedOffer
               ? currentCustomIcon
               : defaultCustomIcon
           )
